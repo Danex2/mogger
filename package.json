@@ -1,0 +1,15 @@
+{
+  "name": "mogger",
+  "version": "1.0.0",
+  "description": "A website that let's you view wow transmogs",
+  "main": "index.js",
+  "author": "Dane Miller",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.0"
+  }
+}
