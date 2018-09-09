@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-  return sequelize.define('post', {
+  return sequelize.define("post", {
     id: {
       type: type.INTEGER,
       primaryKey: true,
@@ -19,6 +19,7 @@ module.exports = (sequelize, type) => {
     weapon: type.STRING,
     weapon2: type.STRING,
     notes: type.STRING,
-    class: type.STRING
+    class: type.STRING, // class and armor type will be mandatory for filtering by class or armor type
+    armorType: type.STRING
   });
 };
