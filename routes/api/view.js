@@ -1,21 +1,21 @@
 //view all of the transmogs
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 //Bring in the user model
-const { Post } = require("../../db");
+const { Post } = require('../../db');
 
 /* ROUTE: /api/view/all
    TYPE: GET
    DESC: Get all transmogs
 */
 
-router.get("/view/all", (req, res) => {
-  Post.findAll({ attributes: ["title", "imgLink", "createdAt"] }).then(
-    posts => {
-      return res.json(posts);
-    }
-  );
+router.get('/view/all', (req, res) => {
+  Post.findAll({
+    attributes: ['id', 'title', 'imgLink', 'createdAt', 'class', 'armorType']
+  }).then(posts => {
+    return res.json(posts);
+  });
 });
 
 /* ROUTE: /api/view/:id
@@ -23,9 +23,27 @@ router.get("/view/all", (req, res) => {
    DESC: View a single transmog
 */
 
-router.get("/view/:id", (req, res) => {
+router.get('/view/:id', (req, res) => {
   Post.findById(req.params.id, {
-    attributes: ["title", "hands", "createdAt"]
+    attributes: [
+      'id',
+      'title',
+      'imgLink',
+      'head',
+      'shoulder',
+      'chest',
+      'back',
+      'wrists',
+      'hands',
+      'waist',
+      'legs',
+      'feet',
+      'weapon',
+      'weapon2',
+      'notes',
+      'class',
+      'armorType'
+    ]
   }).then(post => {
     res.json(post);
   });

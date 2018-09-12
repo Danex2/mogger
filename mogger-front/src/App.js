@@ -1,36 +1,17 @@
-import React, { Component } from "react";
-import axios from "axios";
-import "./App.css";
+import React, { Component } from 'react';
+import Navbar from '../src/components/Navbar';
+import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
+import ViewContainer from './components/ViewContainer';
 
 class App extends Component {
-  state = {
-    data: []
-  };
-
-  componentDidMount() {
-    axios.get("/api/view/all").then(res => {
-      this.setState({ data: res.data });
-    });
-  }
-
   render() {
-    const { data } = this.state;
     return (
-      <div className="card-container">
-        {data.map((item, i) => {
-          return (
-            <div key={i} className="card col-lg-2">
-              <img className="card-img-top" src={item.imgLink} />
-              <div className="card-body">
-                <h5 className="card-title">{item.title}</h5>
-                <a href="#" className="btn btn-primary">
-                  View full transmog
-                </a>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <BrowserRouter>
+        <div>
+          <Navbar />
+          <Route exact path="/view" component={ViewContainer} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

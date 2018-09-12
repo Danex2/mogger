@@ -26,7 +26,8 @@ router.post('/post', (req, res) => {
     weapon: req.body.weapon,
     weapon2: req.body.weapon2,
     notes: req.body.notes,
-    class: req.body.class
+    class: req.body.class,
+    armorType: req.body.armorType
   };
   Post.create(postData).then(post => {
     res.json(post);
