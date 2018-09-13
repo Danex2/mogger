@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-      <a className="navbar-brand" href="#">
+      <Link to="/view" className="navbar-brand">
         Mogger
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -25,9 +26,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to="/view" className="nav-link">
               View
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

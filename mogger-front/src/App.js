@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../src/components/Navbar';
 import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
 import ViewContainer from './components/ViewContainer';
+import ViewItem from './components/ViewItem';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <div>
           <Navbar />
           <Route exact path="/view" component={ViewContainer} />
+          <Route exact path="/view/:id" component={ViewItem} />
         </div>
       </BrowserRouter>
     );
