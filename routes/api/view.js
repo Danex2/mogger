@@ -42,7 +42,8 @@ router.get('/view/:id', (req, res) => {
       'weapon2',
       'notes',
       'class',
-      'armorType'
+      'armorType',
+      'createdAt'
     ]
   }).then(post => {
     res.json(post);
