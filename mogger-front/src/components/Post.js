@@ -16,7 +16,9 @@ class Post extends Component {
     feet: '',
     weapon: '',
     offhand: '',
-    notes: ''
+    notes: '',
+    armorType: '',
+    class: ''
   };
 
   onSubmit = e => {
@@ -35,7 +37,9 @@ class Post extends Component {
       feet: this.state.feet,
       weapon: this.state.weapon,
       weapon2: this.state.offhand,
-      notes: this.state.notes
+      notes: this.state.notes,
+      class: this.state.class,
+      armorType: this.state.armorType
     };
     axios
       .post('/api/post', postData)
@@ -52,6 +56,17 @@ class Post extends Component {
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  handleArmorChange = e => {
+    this.setState({ armorType: e.target.value });
+    console.log(this.state.armorType);
+  };
+
+  handleClassChange = e => {
+    this.setState({ class: e.target.value });
+    console.log(this.state.class);
+  };
+
   render() {
     return (
       <div className="container post-container d-flex align-items-center">
@@ -200,34 +215,44 @@ class Post extends Component {
             </div>
             <div className="col-lg-6 mb-3">
               <label htmlFor="formGroupExampleInput2">Class</label>
-              <select className="form-control form-control-sm">
-                <option>Class</option>
-                <option>Mage</option>
-                <option>Hunter</option>
-                <option>Rogue</option>
-                <option>Paladin</option>
-                <option>Shaman</option>
-                <option>Druid</option>
-                <option>Warlock</option>
-                <option>Priest</option>
-                <option>Warrior</option>
-                <option>Death Knight</option>
-                <option>Monk</option>
-                <option>Demon Hunter</option>
+              <select
+                className="form-control form-control-sm"
+                onChange={this.handleClassChange}
+              >
+                <option disabled selected>
+                  Class
+                </option>
+                <option name="Mage">Mage</option>
+                <option name="Hunter">Hunter</option>
+                <option name="Rogue">Rogue</option>
+                <option name="Paladin">Paladin</option>
+                <option name="Shaman">Shaman</option>
+                <option name="Druid">Druid</option>
+                <option name="Warlock">Warlock</option>
+                <option name="Priest">Priest</option>
+                <option name="Warrior">Warrior</option>
+                <option name="Death Knight">Death Knight</option>
+                <option name="Monk">Monk</option>
+                <option name="Demon Hunter">Demon Hunter</option>
               </select>
             </div>
             <div className="col-lg-6 mb-3">
               <label htmlFor="formGroupExampleInput2">Armor Type</label>
-              <select className="form-control form-control-sm">
-                <option>Armor Type</option>
-                <option>Cloth</option>
-                <option>Leather</option>
-                <option>Plate</option>
-                <option>Mail</option>
+              <select
+                className="form-control form-control-sm"
+                onChange={this.handleArmorChange}
+              >
+                <option disabled selected>
+                  Armor Type
+                </option>
+                <option name="cloth">Cloth</option>
+                <option name="leather">Leather</option>
+                <option name="plate">Plate</option>
+                <option name="mail">Mail</option>
               </select>
             </div>
           </div>
-          <button type="submit" className="btn btn-primary mb-5 col-lg-12">
+          <button type="submit" className="btn btn-primary mb-3 col-lg-12">
             Submit
           </button>
         </form>

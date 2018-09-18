@@ -15,7 +15,7 @@ router.post('/post', (req, res) => {
     title: req.body.title,
     imgLink: req.body.imgLink,
     head: req.body.head,
-    shoulder: req.body.head,
+    shoulder: req.body.shoulder,
     chest: req.body.chest,
     back: req.body.back,
     wrists: req.body.wrists,

@@ -11,6 +11,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Navbar />
+          <Route exact path="/" component={ViewContainer} />
           <Route exact path="/view" component={ViewContainer} />
           <Route exact path="/view/:id" component={ViewItem} />
           <Route exact path="/post" component={Post} />
