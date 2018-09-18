@@ -17,7 +17,7 @@ class ViewItem extends Component {
     return (
       <div className="row">
         <div className="container d-flex justify-content-center">
-          <div className="card mb-3 col-lg-9 col-sm-12">
+          <div className="card mb-3 col-lg-9 col-sm-8">
             <img
               className="card-img-top"
               src={data.imgLink}
@@ -44,6 +44,7 @@ class ViewItem extends Component {
             </div>
           </div>
         </div>
+        <div>{data.notes}</div>
       </div>
     );
   }
