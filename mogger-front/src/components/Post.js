@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Post extends Component {
   state = {
@@ -17,14 +18,44 @@ class Post extends Component {
     offhand: '',
     notes: ''
   };
+
+  onSubmit = e => {
+    e.preventDefault();
+    const postData = {
+      title: this.state.title,
+      imgLink: this.state.image,
+      head: this.state.head,
+      shoulder: this.state.shoulder,
+      chest: this.state.chest,
+      back: this.state.back,
+      wrists: this.state.wrists,
+      hands: this.state.hands,
+      waist: this.state.waist,
+      legs: this.state.legs,
+      feet: this.state.feet,
+      weapon: this.state.weapon,
+      weapon2: this.state.offhand,
+      notes: this.state.notes
+    };
+    axios
+      .post('/api/post', postData)
+      .then(res => {
+        this.props.history.push('/view');
+      })
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  };
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(this.state.shoulder);
   };
   render() {
     return (
       <div className="container post-container d-flex align-items-center">
-        <form>
+        <form onSubmit={this.onSubmit}>
           <h1 className="text-center">Post new transmog</h1>
           <div className="row">
             <div className="col-lg-6 mb-3">
@@ -167,9 +198,9 @@ class Post extends Component {
                 rows="4"
               />
             </div>
-            <div className="col-lg-6 mb-5">
+            <div className="col-lg-6 mb-3">
               <label htmlFor="formGroupExampleInput2">Class</label>
-              <select class="form-control form-control-sm">
+              <select className="form-control form-control-sm">
                 <option>Class</option>
                 <option>Mage</option>
                 <option>Hunter</option>
@@ -187,7 +218,7 @@ class Post extends Component {
             </div>
             <div className="col-lg-6 mb-3">
               <label htmlFor="formGroupExampleInput2">Armor Type</label>
-              <select class="form-control form-control-sm">
+              <select className="form-control form-control-sm">
                 <option>Armor Type</option>
                 <option>Cloth</option>
                 <option>Leather</option>
@@ -196,6 +227,9 @@ class Post extends Component {
               </select>
             </div>
           </div>
+          <button type="submit" className="btn btn-primary mb-5 col-lg-12">
+            Submit
+          </button>
         </form>
       </div>
     );
