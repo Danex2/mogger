@@ -21,9 +21,9 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to="/post" className="nav-link">
               Post
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link to="/view" className="nav-link">

@@ -36,6 +36,7 @@
   flex-direction: row;
   margin-top: 0.5px;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -45,4 +46,15 @@
 
 .card-img-top {
   margin-top: 10px;
+}
+
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
+
+.post-container {
+  height: 100%;
 }
