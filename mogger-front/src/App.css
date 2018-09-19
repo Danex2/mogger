@@ -59,3 +59,7 @@ body,
 .post-container {
   height: 100%;
 }
+
+.c-img {
+  width: 18rem;
+}
