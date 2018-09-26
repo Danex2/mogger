@@ -54,7 +54,8 @@ class Post extends Component {
   };
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.id]: e.target.value });
+    console.log(this.state);
   };
 
   handleArmorChange = e => {
@@ -68,7 +69,141 @@ class Post extends Component {
   };
 
   render() {
-    return <div>11</div>;
+    return (
+      <div className="row container form-container">
+        <h5 className="center-align">New Transmog Post</h5>
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <input
+                id="title"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="title">Post Title</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="image"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="imgLink">Image Link</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="head"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="head">Head</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="shoulder"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="shoulder">Shoulder</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="chest"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="chest">Chest</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="back"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="back">Back</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="wrists"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="wrists">Wrists</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="hands"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="hands">Hands</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="waist"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="waist">Waist</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="legs"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="legs">Legs</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="feet"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="feet">Feet</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="weapon"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="weapon">Weapon</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                id="offhand"
+                type="text"
+                autoComplete="off"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="weapon2">Off-hand</label>
+            </div>
+            <div className="input-field col s12">
+              <textarea
+                id="notes"
+                className="materialize-textarea"
+                placeholder="Extra info about the transmog"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="notes">Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    );
   }
 }
 
