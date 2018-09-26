@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import '../App.css';
-import ViewItem from '../components/ViewItem';
-import View from '../components/View';
+import React, { Component } from "react";
+import axios from "axios";
+import "../App.css";
+import View from "../components/View";
 
 class ViewContainer extends Component {
   state = {
@@ -10,7 +9,7 @@ class ViewContainer extends Component {
   };
 
   componentDidMount() {
-    axios.get('/api/view/all').then(res => {
+    axios.get("/api/view/all").then(res => {
       this.setState({ data: res.data });
     });
   }
