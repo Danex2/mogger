@@ -31,23 +31,6 @@
   }
 }
 
-.card-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 0.5px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-  height: 100%;
-}
-
-.card {
-  margin-right: 10px;
-  margin-top: 10px;
-}
-
-.card-img-top {
-  margin-top: 10px;
-}
 
 html,
 body,
@@ -56,10 +39,11 @@ body,
   height: 100%;
 }
 
-.post-container {
-  height: 100%;
-}
+img{
+  width:300px;
+  height:400px;
 
-.c-img {
-  width: 18rem;
+/*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
+   object-fit: scale-down;
+
 }
