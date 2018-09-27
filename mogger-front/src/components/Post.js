@@ -201,6 +201,7 @@ class Post extends Component {
               <label htmlFor="notes">Notes</label>
             </div>
           </div>
+          <button className="waves-effect waves-light btn">Post</button>
         </form>
       </div>
     );

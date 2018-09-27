@@ -14,7 +14,7 @@ class View extends React.Component {
         {data.map(item => {
           return (
             <div key={item.id} className="col s12 m6 l4">
-              <div className="card">
+              <div className="card ">
                 <div className="card-image">
                   <img src={item.imgLink} />
                 </div>

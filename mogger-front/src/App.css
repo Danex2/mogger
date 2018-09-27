@@ -40,11 +40,11 @@ body,
 }
 
 img{
-  width:300px;
+  width:400px;
   height:400px;
 
 /*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
-   object-fit: scale-down;
+   object-fit: cover;
 
 }
 
