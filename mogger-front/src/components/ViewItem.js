@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../App.css";
 
 class ViewItem extends Component {
   state = {
@@ -14,7 +15,7 @@ class ViewItem extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div className="container">
+      <div className="container form-container">
         <div className="col s12 m7">
           <div className="card">
             <div className="card-image">
@@ -35,7 +36,9 @@ class ViewItem extends Component {
               <div>Legs: {data.legs}</div>
               <div>Feet: {data.feet}</div>
               <div>Weapon: {data.weapon}</div>
-              <div>Off-hand: {data.weapon2}</div>
+              <div>
+                Off-hand: {!data.weapon2 && <span>No item specified</span>}
+              </div>
             </div>
           </div>
         </div>
