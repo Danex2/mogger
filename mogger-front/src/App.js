@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Navbar from '../src/components/Navbar';
-import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
-import ViewContainer from './components/ViewContainer';
-import ViewItem from './components/ViewItem';
-import Post from './components/Post';
+import React, { Component } from "react";
+import Navbar from "../src/components/Navbar";
+import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
+import ViewContainer from "./components/ViewContainer";
+import ViewItem from "./components/ViewItem";
+import Post from "./components/Post";
 
 class App extends Component {
   render() {
