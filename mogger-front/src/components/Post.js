@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../App.css";
 
 class Post extends Component {
   state = {
@@ -55,7 +56,6 @@ class Post extends Component {
 
   handleChange = e => {
     this.setState({ [e.target.id]: e.target.value });
-    console.log(this.state);
   };
 
   handleArmorChange = e => {
@@ -72,7 +72,7 @@ class Post extends Component {
     return (
       <div className="row container form-container">
         <h5 className="center-align">New Transmog Post</h5>
-        <form className="col s12">
+        <form className="col s12" onSubmit={this.onSubmit}>
           <div className="row">
             <div className="input-field col s6">
               <input
@@ -80,6 +80,7 @@ class Post extends Component {
                 type="text"
                 autoComplete="off"
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor="title">Post Title</label>
             </div>
@@ -87,8 +88,10 @@ class Post extends Component {
               <input
                 id="image"
                 type="text"
+                name="image"
                 autoComplete="off"
                 onChange={this.handleChange}
+                required
               />
               <label htmlFor="imgLink">Image Link</label>
             </div>
@@ -199,6 +202,41 @@ class Post extends Component {
                 onChange={this.handleChange}
               />
               <label htmlFor="notes">Notes</label>
+            </div>
+            <div className="input-field col s12 l6">
+              <select
+                className="browser-default"
+                onChange={this.handleClassChange}
+              >
+                <option defaultValue="class" disabled>
+                  Class
+                </option>
+                <option value="Mage">Mage</option>
+                <option value="Death Knight">Death Knight</option>
+                <option value="Warrior">Warrior</option>
+                <option value="Hunter">Hunter</option>
+                <option value="Priest">Priest</option>
+                <option value="Warlock">Warlock</option>
+                <option value="Druid">Druid</option>
+                <option value="Demon Hunter">Demon Hunter</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Shaman">Shaman</option>
+                <option value="Paladin">Paladin</option>
+              </select>
+            </div>
+            <div className="input-field col s12 l6">
+              <select
+                className="browser-default"
+                onChange={this.handleArmorChange}
+              >
+                <option defaultValue="Armor Type" disabled>
+                  Armor Type
+                </option>
+                <option value="Cloth">Cloth</option>
+                <option value="Mail">Mail</option>
+                <option value="Plate">Plate</option>
+                <option value="Leather">Leather</option>
+              </select>
             </div>
           </div>
           <button className="waves-effect waves-light btn">Post</button>
