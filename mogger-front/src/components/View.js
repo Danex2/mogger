@@ -21,11 +21,12 @@ class View extends React.Component {
                 <div className="card-content">
                   <p className="center-align">{item.title}</p>
                 </div>
-                <div className="card-action left-align">
+                <div className="card-action center-align">
                   <Link to={`/view/${item.id}`}>View full transmog</Link>
-                  <span className="right-align">
-                    Class: {item.class} Type: {item.armorType}
-                  </span>
+                </div>
+                <div className="center-align moginfo-container">
+                  <span className="mog-info">{item.class}</span>{" "}
+                  <span className="mog-info">{item.armorType}</span>
                 </div>
               </div>
             </div>

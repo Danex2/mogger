@@ -15,30 +15,50 @@ class ViewItem extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div className="center-align row">
-        <div className="container form-container">
-          <div className="col s12 m2 l6 offset-l3">
-            <div className="card">
-              <div className="card-image">
-                <img src={data.imgLink} />
-                <span className="card-title">{data.title}</span>
-              </div>
-              <div className="card-content center-align">
-                <div>Head: {data.head}</div>
-                <div>Shoulder: {data.shoulder}</div>
-                <div>Chest: {data.chest}</div>
-                <div>Back: {data.back}</div>
-                <div>Wrists: {data.wrists}</div>
-                <div>Hands: {data.hands}</div>
-                <div>Waist: {data.waist}</div>
-                <div>Legs: {data.legs}</div>
-                <div>Feet: {data.feet}</div>
-                <div>Weapon: {data.weapon}</div>
-                <div>Off-hand: {data.weapon2}</div>
-              </div>
-              <div className="card-action center-align">
-                <h5>Extra notes</h5>
-                <p>{data.notes}</p>
+      <div className="container">
+        <div className="row">
+          <div className="form-container">
+            <div className="col s12 m2 l4 offset-l4">
+              <div className="card">
+                <div className="card-image">
+                  <img src={data.imgLink} />
+                </div>
+                <div className="card-content center-align">
+                  <span className="card-title">{data.title}</span>
+                  <div>Head: {data.head || <span>No item specified</span>}</div>
+                  <div>
+                    Shoulder: {data.shoulder || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    Chest: {data.chest || <span>No item specified</span>}
+                  </div>
+                  <div>Back: {data.back || <span>No item specified</span>}</div>
+                  <div>
+                    Wrists: {data.wrists || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    Hands: {data.hands || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    Waist: {data.waist || <span>No item specified</span>}
+                  </div>
+                  <div>Legs: {data.legs || <span>No item specified</span>}</div>
+                  <div>Feet: {data.feet || <span>No item specified</span>}</div>
+                  <div>
+                    Weapon: {data.weapon || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    Off-hand: {data.weapon2 || <span>No item specified</span>}
+                  </div>
+                </div>
+                <div className="card-action center-align">
+                  <h5>Extra notes</h5>
+                  <p>
+                    {data.notes || (
+                      <span>No extra notes for this transmog</span>
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
