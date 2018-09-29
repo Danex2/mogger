@@ -44,10 +44,12 @@ img{
   height:400px;
 
 /*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
-   object-fit: cover;
+   object-fit: fill;
 
 }
 
 .form-container {
   margin-top: 70px;
+
 }
+
