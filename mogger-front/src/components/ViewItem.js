@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../App.css";
+import "../ViewItem.css";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 class ViewItem extends Component {
   state = {
-    data: []
+    data: [],
+    modalIsOpen: false
   };
   componentDidMount() {
     axios.get(`/api/view/${this.props.match.params.id}`).then(res => {
@@ -12,16 +16,34 @@ class ViewItem extends Component {
     });
   }
 
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
+
   render() {
     const { data } = this.state;
     return (
       <div className="container">
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          contentLabel="Example Modal"
+        >
+          <div className="modal-container center-align">
+            <h2>{data.title}</h2>
+            <img className="modal-img" src={data.imgLink} alt="Transmog" />
+          </div>
+        </Modal>
         <div className="row">
           <div className="form-container">
             <div className="col s12 m2 l4 offset-l4">
               <div className="card">
                 <div className="card-image">
-                  <img src={data.imgLink} />
+                  <img className="full-item" src={data.imgLink} />
                 </div>
                 <div className="card-content center-align">
                   <span className="card-title">{data.title}</span>
@@ -60,6 +82,9 @@ class ViewItem extends Component {
                   </p>
                 </div>
               </div>
+              <button className="btn" onClick={this.openModal}>
+                View
+              </button>
             </div>
           </div>
         </div>

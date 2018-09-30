@@ -39,19 +39,15 @@ body,
   height: 100%;
 }
 
-img{
+.view-img{
   width:400px;
   height:400px;
 
 /*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
-   object-fit: fill;
+   object-fit: cover;
 
 }
 
-.form-container {
-  margin-top: 20px;
-
-}
 
 .mog-info {
   background-color: black;

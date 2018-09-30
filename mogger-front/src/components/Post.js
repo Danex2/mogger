@@ -18,8 +18,8 @@ class Post extends Component {
     weapon: "",
     offhand: "",
     notes: "",
-    armorType: "",
-    class: ""
+    armorType: "Cloth",
+    class: "Mage"
   };
 
   onSubmit = e => {
@@ -207,10 +207,8 @@ class Post extends Component {
               <select
                 className="browser-default"
                 onChange={this.handleClassChange}
+                value={this.state.class}
               >
-                <option defaultValue="class" disabled>
-                  Class
-                </option>
                 <option value="Mage">Mage</option>
                 <option value="Death Knight">Death Knight</option>
                 <option value="Warrior">Warrior</option>
@@ -228,10 +226,8 @@ class Post extends Component {
               <select
                 className="browser-default"
                 onChange={this.handleArmorChange}
+                value={this.state.armorType}
               >
-                <option defaultValue="Armor Type" disabled>
-                  Armor Type
-                </option>
                 <option value="Cloth">Cloth</option>
                 <option value="Mail">Mail</option>
                 <option value="Plate">Plate</option>
