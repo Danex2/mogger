@@ -16,8 +16,13 @@
 .ReactModal__Content {
   height: 95%;
   width: 95%;
+  word-wrap: break-word;
 }
 
 .item-slot {
   font-weight: bold;
+}
+
+.card-content {
+  word-wrap: break-word;
 }

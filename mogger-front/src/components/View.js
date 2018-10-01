@@ -13,6 +13,7 @@ class View extends React.Component {
         <div className="row">
           <div className="input-field col s12 m6 l6">
             <select className="browser-default">
+              <option value="All">All</option>
               <option value="Mage">Mage</option>
               <option value="Death Knight">Death Knight</option>
               <option value="Warrior">Warrior</option>
@@ -28,6 +29,7 @@ class View extends React.Component {
           </div>
           <div className="input-field col s12 m6 l6">
             <select className="browser-default">
+              <option value="All">All</option>
               <option value="Cloth">Cloth</option>
               <option value="Mail">Mail</option>
               <option value="Plate">Plate</option>
@@ -37,13 +39,13 @@ class View extends React.Component {
         </div>
         {data.map(item => {
           return (
-            <div key={item.id} className="col s12 m6 l4">
+            <div key={item.id} className="col s12 m6 l3">
               <div className="card">
                 <div className="card-image">
                   <img className="view-img" src={item.imgLink} />
                 </div>
                 <div className="card-content">
-                  <p className="center-align">{item.title}</p>
+                  <p className="center-align truncate">{item.title}</p>
                 </div>
                 <div className="card-action center-align">
                   <Link to={`/view/${item.id}`}>View full transmog</Link>
