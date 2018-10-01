@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link to="/view" className="brand-logo center">
           Mogger
         </Link>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <ul id="nav-mobile" className="right ">
           <li>
             <Link to="/view">View</Link>
           </li>

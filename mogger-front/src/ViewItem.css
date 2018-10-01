@@ -17,3 +17,7 @@
   height: 95%;
   width: 95%;
 }
+
+.item-slot {
+  font-weight: bold;
+}

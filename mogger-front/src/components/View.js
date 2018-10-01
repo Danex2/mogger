@@ -8,9 +8,33 @@ class View extends React.Component {
   }
   render() {
     const { data } = this.props;
-    console.log(data);
     return (
-      <div className="row container">
+      <div className="row">
+        <div className="row">
+          <div className="input-field col s12 m6 l6">
+            <select className="browser-default">
+              <option value="Mage">Mage</option>
+              <option value="Death Knight">Death Knight</option>
+              <option value="Warrior">Warrior</option>
+              <option value="Hunter">Hunter</option>
+              <option value="Priest">Priest</option>
+              <option value="Warlock">Warlock</option>
+              <option value="Druid">Druid</option>
+              <option value="Demon Hunter">Demon Hunter</option>
+              <option value="Rogue">Rogue</option>
+              <option value="Shaman">Shaman</option>
+              <option value="Paladin">Paladin</option>
+            </select>
+          </div>
+          <div className="input-field col s12 m6 l6">
+            <select className="browser-default">
+              <option value="Cloth">Cloth</option>
+              <option value="Mail">Mail</option>
+              <option value="Plate">Plate</option>
+              <option value="Leather">Leather</option>
+            </select>
+          </div>
+        </div>
         {data.map(item => {
           return (
             <div key={item.id} className="col s12 m6 l4">

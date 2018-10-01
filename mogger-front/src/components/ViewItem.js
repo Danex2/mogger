@@ -40,37 +40,59 @@ class ViewItem extends Component {
         </Modal>
         <div className="row">
           <div className="form-container">
-            <div className="col s12 m2 l4 offset-l4">
+            <div className="col s12 m12 l6 offset-l3">
               <div className="card">
                 <div className="card-image">
                   <img className="full-item" src={data.imgLink} />
                 </div>
                 <div className="card-content center-align">
                   <span className="card-title">{data.title}</span>
-                  <div>Head: {data.head || <span>No item specified</span>}</div>
                   <div>
-                    Shoulder: {data.shoulder || <span>No item specified</span>}
+                    <span className="item-slot">Head:</span>{" "}
+                    {data.head || <span>No item specified</span>}
                   </div>
                   <div>
-                    Chest: {data.chest || <span>No item specified</span>}
-                  </div>
-                  <div>Back: {data.back || <span>No item specified</span>}</div>
-                  <div>
-                    Wrists: {data.wrists || <span>No item specified</span>}
+                    <span className="item-slot">Shoulder:</span>{" "}
+                    {data.shoulder || <span>No item specified</span>}
                   </div>
                   <div>
-                    Hands: {data.hands || <span>No item specified</span>}
+                    <span className="item-slot">Chest:</span>{" "}
+                    {data.chest || <span>No item specified</span>}
                   </div>
                   <div>
-                    Waist: {data.waist || <span>No item specified</span>}
-                  </div>
-                  <div>Legs: {data.legs || <span>No item specified</span>}</div>
-                  <div>Feet: {data.feet || <span>No item specified</span>}</div>
-                  <div>
-                    Weapon: {data.weapon || <span>No item specified</span>}
+                    {" "}
+                    <span className="item-slot">Back:</span>{" "}
+                    {data.back || <span>No item specified</span>}
                   </div>
                   <div>
-                    Off-hand: {data.weapon2 || <span>No item specified</span>}
+                    <span className="item-slot">Wrists:</span>{" "}
+                    {data.wrists || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    <span className="item-slot">Hands:</span>{" "}
+                    {data.hands || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    <span className="item-slot">Waist:</span>{" "}
+                    {data.waist || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    {" "}
+                    <span className="item-slot">Legs:</span>{" "}
+                    {data.legs || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    {" "}
+                    <span className="item-slot">Feet:</span>{" "}
+                    {data.feet || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    <span className="item-slot">Weapon:</span>{" "}
+                    {data.weapon || <span>No item specified</span>}
+                  </div>
+                  <div>
+                    <span className="item-slot">Off-hand:</span>{" "}
+                    {data.weapon2 || <span>No item specified</span>}
                   </div>
                 </div>
                 <div className="card-action center-align">
@@ -82,7 +104,7 @@ class ViewItem extends Component {
                   </p>
                 </div>
               </div>
-              <button className="btn" onClick={this.openModal}>
+              <button className="btn col s12 m12 l12" onClick={this.openModal}>
                 View
               </button>
             </div>
