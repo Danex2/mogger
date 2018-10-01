@@ -5,14 +5,37 @@ import "../App.css";
 class View extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      class: "All"
+    };
   }
+  handleClassChange = e => {
+    this.setState({ class: e.target.value });
+    console.log(this.state.class);
+  };
+
+  defaultImg = e => {
+    e.target.src = "https://via.placeholder.com/100x100";
+  };
+
   render() {
     const { data } = this.props;
+    let filter = data.filter(data => {
+      if (this.state.class === "All") {
+        return data;
+      } else {
+        return data.class === this.state.class;
+      }
+    });
     return (
       <div className="row">
         <div className="row">
           <div className="input-field col s12 m6 l6">
-            <select className="browser-default">
+            <select
+              className="browser-default"
+              onChange={this.handleClassChange}
+              value={this.state.class}
+            >
               <option value="All">All</option>
               <option value="Mage">Mage</option>
               <option value="Death Knight">Death Knight</option>
@@ -37,12 +60,16 @@ class View extends React.Component {
             </select>
           </div>
         </div>
-        {data.map(item => {
+        {filter.map(item => {
           return (
             <div key={item.id} className="col s12 m6 l3">
               <div className="card">
                 <div className="card-image">
-                  <img className="view-img" src={item.imgLink} />
+                  <img
+                    onError={this.defaultImg}
+                    className="view-img"
+                    src={item.imgLink}
+                  />
                 </div>
                 <div className="card-content">
                   <p className="center-align truncate">{item.title}</p>
