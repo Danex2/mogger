@@ -12,7 +12,6 @@ class View extends React.Component {
   }
   handleClassChange = e => {
     this.setState({ class: e.target.value });
-    console.log(this.state.class);
   };
 
   defaultImg = e => {
@@ -21,7 +20,6 @@ class View extends React.Component {
 
   handleArmorChange = e => {
     this.setState({ type: e.target.value });
-    console.log(this.state.class);
   };
 
   render() {
@@ -33,7 +31,7 @@ class View extends React.Component {
         return data.class === this.state.class;
       } else if (this.state.class !== "All" && this.state.type !== "All") {
         return (
-          data.class === this.state.class && data.armorType === this.state.type
+          data.class === this.state.class && data.armorType === this.state.type // this can be refactored
         );
       } else {
         return data;

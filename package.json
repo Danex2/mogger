@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "A website that let's you view wow transmogs",
   "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "npm install && cd mogger-front && npm install --only-dev && npm install && npm run build",
+    "start": "node index.js"
+  },
   "author": "Dane Miller",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "nodemon": "^1.18.4",
     "pg": "^7.4.3",
