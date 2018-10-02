@@ -6,7 +6,8 @@ class View extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      class: "All"
+      class: "All",
+      type: "All"
     };
   }
   handleClassChange = e => {
@@ -18,13 +19,24 @@ class View extends React.Component {
     e.target.src = "https://via.placeholder.com/100x100";
   };
 
+  handleArmorChange = e => {
+    this.setState({ type: e.target.value });
+    console.log(this.state.class);
+  };
+
   render() {
     const { data } = this.props;
     let filter = data.filter(data => {
-      if (this.state.class === "All") {
-        return data;
-      } else {
+      if (this.state.class === "All" && this.state.type !== "All") {
+        return data.armorType === this.state.type;
+      } else if (this.state.class !== "All" && this.state.type === "All") {
         return data.class === this.state.class;
+      } else if (this.state.class !== "All" && this.state.type !== "All") {
+        return (
+          data.class === this.state.class && data.armorType === this.state.type
+        );
+      } else {
+        return data;
       }
     });
     return (
@@ -51,7 +63,11 @@ class View extends React.Component {
             </select>
           </div>
           <div className="input-field col s12 m6 l6">
-            <select className="browser-default">
+            <select
+              className="browser-default"
+              onChange={this.handleArmorChange}
+              value={this.state.type}
+            >
               <option value="All">All</option>
               <option value="Cloth">Cloth</option>
               <option value="Mail">Mail</option>
