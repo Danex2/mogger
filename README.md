@@ -2,7 +2,7 @@
 
 A web app that let's you view world of warcraft transmogs
 
-Live link: https://mysterious-shelf-78900.herokuapp.com/view 
+Live link: https://mogger.herokuapp.com/view 
 
 ## Database file
 Add a ``db.js`` to your root and fill in the information
